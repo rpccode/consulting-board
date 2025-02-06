@@ -1,4 +1,9 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,  // Omite la comprobación de bibliotecas
+    "strict": true,         // Mantén las opciones estrictas activadas para un código más seguro
+    "esModuleInterop": true
+  }
 }

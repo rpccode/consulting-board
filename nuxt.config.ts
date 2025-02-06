@@ -2,19 +2,21 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt','@nuxtjs/color-mode','@pinia/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt','@nuxtjs/color-mode','@pinia/nuxt','@sidebase/nuxt-auth'],
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
+
     prefix: '',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: './components/ui'
   },
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],
+  },
+  auth: {
+    origin: process.env.AUTH_ORIGIN || "http://localhost:3000",
+    baseURL: '/api/auth', 
+    isEnabled: true,
+    provider: {
+      type: "authjs", 
+    },
   },
 })

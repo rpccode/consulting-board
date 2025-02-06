@@ -1,7 +1,7 @@
 <template>
-    <header class=" bg-[#151823] p-4 flex justify-between items-center">
+    <header class=" bg-[#0B0F17] p-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <img src="/Logo.png" alt="Logo" class="h-8 w-8" />
+        
         <h1 class="text-xl font-bold text-white">Netlify Dashboard</h1>
       </div>
       <nav>

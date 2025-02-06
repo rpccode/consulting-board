@@ -107,16 +107,36 @@
   
       <div :class="['mt-auto p-4', !isOpen && 'flex flex-col items-center']">
         <template v-if="isOpen">
-          <button class="w-full py-2 text-center text-[#6366F1] hover:text-[#818CF8] transition-colors text-sm font-medium">
-            Upgrade
-          </button>
+           <button
+             
+              :class="[
+                'flex items-center gap-3 w-full px-2 py-2 mb-2 text-gray-400 hover:text-white rounded-md hover:bg-[#232734] transition-all duration-300 ease-in-out',
+                !isOpen && 'justify-center',
+                'bg-[#cc2323] text-white font-medium text-center'
+              ]"
+              title="Cerrar Seccion"
+            >
+              <component :is="LogOutIcon" class="h-4 w-4" />
+              Cerrar Seccion
+            </button>
           <div class="flex items-center gap-2 mt-4">
             <div class="h-8 w-8 rounded-full bg-gray-600" />
             <span class="text-gray-400 text-sm">rpccode@gmail.com</span>
           </div>
         </template>
         <template v-else>
-          <div class="h-8 w-8 rounded-full bg-gray-600" />
+          <button
+             
+              :class="[
+                'flex items-center gap-3 w-full px-2 py-2 mb-2 text-gray-400 hover:text-white rounded-md hover:bg-[#232734] transition-all duration-300 ease-in-out',
+                !isOpen && 'justify-center',
+                'bg-[#cc2323] text-white font-medium'
+              ]"
+              title="Cerrar Seccion"
+            >
+              <component :is="LogOutIcon" class="h-4 w-4" />
+            </button>
+          <div class="h-8 w-8 mt-2 rounded-full bg-gray-600" />
         </template>
       </div>
   
@@ -135,7 +155,8 @@
   import { useSidebarStore } from '../stores/sidebar'
   import { Search, Box, Hammer, Puzzle, Globe, Users, FileText,
      Shield, CreditCard, Settings, Palette, ChevronLeft,
-      ChevronRight, ChevronDown,PanelLeftClose,PanelLeftOpen
+      ChevronRight, ChevronDown,PanelLeftClose,PanelLeftOpen,
+      LogOutIcon
     
     } from 'lucide-vue-next'
   
